@@ -1,0 +1,8 @@
+function dcai_spine=get_dcai_spine(in,ica)
+global NGATES CONST
+tau = 1e-3*800;
+depth = 1000/4;
+cai0 = 200e-6;
+cai = in(NGATES+3);
+dcai_spine = -ica/depth/CONST.FARADAY/2 * (1e7) + (cai0 - cai)/tau;
+end
